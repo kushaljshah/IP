@@ -13,7 +13,7 @@ When a parameter is passed by value, the caller and callee have two independent 
 
 --------------------------------------------
 
-ava is always pass-by-value. Unfortunately, when we pass the value of an object, we are passing the reference to it. This is confusing to beginners.
+Java is always pass-by-value. Unfortunately, when we pass the value of an object, we are passing the reference to it. This is confusing to beginners.
 
 It goes like this:
 
