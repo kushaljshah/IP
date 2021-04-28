@@ -1,0 +1,2 @@
+https://www.youtube.com/watch?v=O9mqe53syGc
+https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection#:~:text=Inversion%20of%20Control%20(IoC)%20means,rely%20to%20do%20their%20work.&text=Dependency%20Injection%20(DI)%20means%20that,constructor%20parameters%20and%20set%20properties.

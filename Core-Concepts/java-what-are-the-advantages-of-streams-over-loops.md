@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/44180101/in-java-what-are-the-advantages-of-streams-over-loops

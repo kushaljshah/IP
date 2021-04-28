@@ -1,5 +1,10 @@
 package LeetCode.Popular.Easy.Array;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Given two arrays, write a function to compute their intersection.
  *
@@ -22,6 +27,9 @@ package LeetCode.Popular.Easy.Array;
  * What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
  */
 
+//https://leetcode.com/problems/intersection-of-two-arrays-ii/discuss/82243/Solution-to-3rd-follow-up-question
+//https://afteracademy.com/blog/find-the-intersection-of-two-unsorted-arrays
+//https://medium.com/@punitkmr/intersection-of-two-arrays-ii-ffb26f04dfd1
 public class Intersection2Arrays {
 
     /**
@@ -108,6 +116,7 @@ public class Intersection2Arrays {
     public static void main(String args[]) {
         int a[] = { 7, 1, 5, 2, 3, 6 };
         int b[] = { 3, 8, 6, 20, 7 };
+
 
         Intersection2Arrays uiu = new Intersection2Arrays();
         uiu.findPosition(a, b);
