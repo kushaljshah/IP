@@ -31,6 +31,13 @@ public class test {
         System.out.println("Hello World!");
 
         test t = new test();
+
+        String s = "cats";
+        System.out.println(s.substring(0));
+        System.out.println(s.substring(1));
+        System.out.println(s.substring(2));
+        System.out.println(s.substring(3));
+        System.out.println(s.substring(4));
 //
 //        t.test1();
 //        t.test2();
