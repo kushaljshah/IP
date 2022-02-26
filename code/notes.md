@@ -6,29 +6,17 @@
 6. Make sure all test cases are covered for a question. Infact before starting the solution try to cover all test cases 
    before hand. Ex: for sliding window questions, the patterns should be alternate, match in star and nothing towards 
    end, vice versa, match in the middle only.
+7. For any question, write down the solution with a few examples and write the code viewing it step by step
+   ex: Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+   Output: [1.00000,-1.00000,-1.00000,3.00000,5.00000,6.00000]
+   Explanation:
+   Window position                Median
+   ---------------                -----
+   [1  3  -1] -3  5  3  6  7        1
+   1 [3  -1  -3] 5  3  6  7       -1
+   1  3 [-1  -3  5] 3  6  7       -1
+   1  3  -1 [-3  5  3] 6  7        3
+   1  3  -1  -3 [5  3  6] 7        5
+   1  3  -1  -3  5 [3  6  7]       6
 
 
-Dear Kushal Shah ,
-
-We wish to inform you that your ESOP grants have been updated on ESOP Direct portal and you can you can access the same using the below information.
-
-
-Link: https://www.esopdirect.com/MyESOPs/Login.aspx
-
-
-Your login details have been reset. Your personalized login details are as follows:
-
-User ID : 136007
-Password : MyESOPs_285872768
-Company ID: Flipkart
-
-Please note that the User Id and Password are case sensitive. Please copy-paste the above mentioned password as it is for the 1st time.
-We recommend you change your password immediately after first login for security reasons.
-
-Please note that on usage of wrong password for 5 consecutive times the account would get lock, and you need to reset the same using the “RESET PASSWORD” link on the login page.
-
-Regards,
-ESOP Direct Team
-
-Kush26434
-Flipkartkush1#
