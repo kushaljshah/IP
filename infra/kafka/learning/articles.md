@@ -1,1 +1,0 @@
-https://stackoverflow.com/questions/25174622/difference-between-ensemble-and-quorum-in-zookeeper/45212088

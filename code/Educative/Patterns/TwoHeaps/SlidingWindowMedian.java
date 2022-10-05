@@ -80,6 +80,15 @@ public class SlidingWindowMedian {
                 start++;
             }
         }
+
+        return ans;
+    }
+
+    public double findMedian() {
+        if(maxHeap.size() == minHeap.size())
+            return ((double)maxHeap.peek() + (double)minHeap.peek())/2.0;
+        else
+            return maxHeap.peek();
     }
 
 }
