@@ -42,24 +42,25 @@ public class NextRight {
 
     }
 
-    public int[] findRightInterval(int[][] intervals) {
-        PriorityQueue<Integer> p1 = new PriorityQueue<>();
-        PriorityQueue<Integer> p2 = new PriorityQueue<>();
+//    public int[] findRightInterval(int[][] intervals) {
+////        PriorityQueue<Integer> p1 = new PriorityQueue<>();
+////        PriorityQueue<Integer> p2 = new PriorityQueue<>();
+////
+////        HashMap<Integer, Integer> firstIndexToPosMap = new HashMap<>();
+////        HashMap<Integer, Integer> firstIndexToSecondIndexMap = new HashMap<>();
+////
+////        for(int i=0; i<intervals.length; i++){
+////            p1.add(intervals[i][0]);
+////            p2.add(intervals[i][1);
+////            firstIndexToPosMap.put(intervals[i][0], i);
+////            firstIndexToSecondIndexMap.put(intervals[i][0], intervals[i][1]);
+//
+//        }
 
-        HashMap<Integer, Integer> firstIndexToPosMap = new HashMap<>();
-        HashMap<Integer, Integer> firstIndexToSecondIndexMap = new HashMap<>();
-
-        for(int i=0; i<intervals.length; i++){
-            p1.add(intervals[i][0]);
-            p2.add(intervals[i][1);
-            firstIndexToPosMap.put(intervals[i][0], i);
-            firstIndexToSecondIndexMap.put(intervals[i][0], intervals[i][1]);
-        }
-
-        while (!p1.isEmpty()){
-            int first = p1.remove();
-
-        }
+//        while (!p1.isEmpty()){
+//            int first = p1.remove();
+//
+//        }
 
 
 
@@ -69,4 +70,3 @@ public class NextRight {
     }
 
 
-}
