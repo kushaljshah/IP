@@ -5,7 +5,6 @@ For Distributed DC - Markel tree
 
 
 
-Work with SDE1
 Keep documenting your work and detailed HLD, LLD
 
 RMQ benefits
