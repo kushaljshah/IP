@@ -1,6 +1,7 @@
 package Educative.Patterns.TwoPointers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -41,29 +42,61 @@ public class BackspaceStringCompare {
         System.out.println(backspaceCompare("a##c", "#a#c"));
         System.out.println(backspaceCompare("a#c", "b"));
         System.out.println(backspaceCompare("y#fo##f","y#f#o##f"));
+        System.out.println(backspaceCompare("bxj##tw","bxo#j##tw"));
     }
 
     public static boolean backspaceCompare(String s, String t) {
 
+        int start1 = 0;
+        char[] nums1 = new char[s.length()];
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i) != '#'){
+                nums1[start1] = s.charAt(i);
+                s = s.substring(0, start1) + s.charAt(i) + s.substring(start1+1);
+                start1++;
+            }else {
+                if(start1 > 0)
+                    start1--;
+            }
+        }
+
+        int start2 = 0;
+        char[] nums2 = new char[s.length()];
+        for(int i=0; i<t.length(); i++){
+            if(t.charAt(i) != '#'){
+                nums2[start2] = t.charAt(i);
+                t = t.substring(0, start2) + t.charAt(i) + t.substring(start2+1);
+                start2++;
+            }else {
+                if(start2 > 0)
+                    start2--;
+            }
+        }
+
+        return ((String) String.valueOf(s.substring(0, start1))).equals(((String) String.valueOf(t.substring(0, start2))));
+    }
+
+    public static boolean mine_backspaceCompare(String s, String t) {
+
         List<Character> sList = new ArrayList<>();
         List<Character> tList = new ArrayList<>();
 
-        for(int i=0; i<s.length(); i++){
-            if(s.charAt(i) == '#' ){
+        for(int start=0; start<s.length(); start++){
+            if(s.charAt(start) == '#' ){
                 if( sList.size() > 0)
                     sList.remove(sList.size() - 1);
             }
             else{
-                sList.add(s.charAt(i));
+                sList.add(s.charAt(start));
             }
         }
 
-        for(int i=0; i<t.length(); i++){
-            if(t.charAt(i) == '#'){
+        for(int start=0; start<t.length(); start++){
+            if(t.charAt(start) == '#'){
                 if(tList.size() > 0)
                     tList.remove(tList.size() - 1);
             }else{
-                tList.add(t.charAt(i));
+                tList.add(t.charAt(start));
             }
         }
 
