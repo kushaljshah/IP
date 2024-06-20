@@ -28,22 +28,131 @@ public class PalindromeLL {
     public static void main(String[] args) {
 
         ListNode one = new ListNode(1);
-        ListNode two = new ListNode(2);
+        ListNode two = new ListNode(1);
         ListNode three = new ListNode(3);
-        ListNode four = new ListNode(4);
-        ListNode five = new ListNode(3);
-        ListNode six = new ListNode(2);
+        ListNode four = new ListNode(3);
+        ListNode five = new ListNode(2);
+        ListNode six = new ListNode(1);
         ListNode seven = new ListNode(1);
         one.next= two;
-        two.next= three;
-        three.next= four;
-        four.next= five;
-        five.next= six;
-        six.next= seven;
+//        two.next= three;
+//        three.next= four;
+//        four.next= five;
+//        five.next= six;
+//        six.next= seven;
 
         root = one;
-        boolean condition = isPalindromeRec(one);
+        boolean condition = isPalindrome2(one);
         System.out.println("isPalidrome :" + condition);
+    }
+
+
+    public static boolean isPalindrome2(ListNode head) {
+
+//        printLL(head);
+        if(head == null || head.next == null)
+            return true;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        // find middle node
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast =  fast.next.next;
+
+        }
+
+
+        /**
+         * 1 2 3 4 5 6 7
+         * 2 3
+         * 3 5
+         * 4 7
+         *
+         * 1 2 3 4 5 6
+         * 2 3
+         * 3 5
+         * 4 6
+         *
+         * 1 2 3 4 5
+         * 2 3
+         * 3 5
+         *
+         * 1 2 3 4 5 6
+         * 2 3
+         * 3 5
+         * 4 null
+         *
+         * a b b c b b a
+         * a b b d d b b a
+         *
+         * p h    n
+         *   1    2 3 4 5
+         *       p h
+         *   1    2 3 4 5
+         *
+         *     p h/n
+         *   1 2
+         *
+         *       h
+         *   1 2 3 4 5 6
+         */
+
+        // reverse first half
+        ListNode prev = null;
+        ListNode next = null;
+        while (head != null && head != slow){
+            next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+
+//        printLL(fast);
+//        printLL(slow);
+//        printLL(prev);
+
+
+        if(fast != null){
+            /**
+             * 1 2 3 4 5 6
+             * a b
+             *
+             * 1 2 3 4 5 6 7
+             * 2 3
+             * 3 5
+             * 4 7
+             *
+             * 1 2 3 4 5 6
+             * 2 3
+             * 3 5
+             * 4 null
+             *
+             *
+             * 1 2
+             * 1 2 3
+             */
+
+            slow = slow.next;
+
+        }else {
+
+
+        }
+
+        while (prev != null && slow != null){
+            if(prev.val != slow.val)
+                return false;
+
+            prev = prev.next;
+            slow = slow.next;
+        }
+
+
+        return true;
+
+
     }
 
     public static boolean isPalindrome(ListNode head) {
@@ -120,5 +229,7 @@ public class PalindromeLL {
         System.out.println("");
 
     }
+
+
 
 }

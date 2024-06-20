@@ -29,17 +29,60 @@ import java.util.Arrays;
 public class MissingPositiveNumber {
 
     public static void main(String[] args) {
-        System.out.println(firstMissingPositive(new int[]{1,2,0}));
-        System.out.println(firstMissingPositive(new int[]{3,4,-1,1}));
-        System.out.println(firstMissingPositive(new int[]{7,8,9,11,12}));
-        System.out.println(firstMissingPositive(new int[]{1,2,3}));
-        System.out.println(firstMissingPositive(new int[]{0,2,3}));
-        System.out.println(firstMissingPositive(new int[]{-1,1,2}));
-        System.out.println(firstMissingPositive(new int[]{-10,-11,2,3}));
-        System.out.println(firstMissingPositive(new int[]{-10,-11,1,2}));
-        System.out.println(firstMissingPositive(new int[]{-10,-11,2,4}));
-        System.out.println(firstMissingPositive(new int[]{-10,-11,-12,2,4}));
+        System.out.println(firstMissingPositiveNew(new int[]{1,2,0}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{3,4,-1,1}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{7,8,9,11,12}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{1,2,3}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{0,2,3}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{-1,1,2}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{-10,-11,2,3}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{-10,-11,1,2}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{-10,-11,2,4}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{-10,-11,-12,2,4}));
+        System.out.println("");
+        System.out.println(firstMissingPositiveNew(new int[]{1,1}));
+        System.out.println("");
     }
+
+    public static int firstMissingPositiveNew(int[] nums) {
+        System.out.println(Arrays.toString(nums));
+        for(int i=0 ; i<nums.length;){
+//            if(nums[i] > 0 && nums[i] <= nums.length && i != nums[i] - 1){
+            int correctIdx = nums[i] - 1;
+            if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[correctIdx]) {
+                swap(nums, i, nums[i] - 1);
+            }else{
+                i++;
+            }
+        }
+
+        System.out.println(Arrays.toString(nums));
+
+        for(int i=0; i<nums.length; i++){
+            if(i != nums[i] -1)
+                return i+1;
+        }
+
+
+        return nums.length + 1;
+
+    }
+
+    static void swap(int[] nums, int index1, int index2){
+        int tmp = nums[index1];
+        nums[index1] = nums[index2];
+        nums[index2] = tmp;
+    }
+
 
     public static int firstMissingPositiveOld(int[] nums) {
         int min = getMinPositiveNumber(nums);

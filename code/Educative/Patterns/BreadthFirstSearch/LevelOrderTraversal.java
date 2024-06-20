@@ -37,6 +37,11 @@ public class LevelOrderTraversal {
         System.out.println(new LevelOrderTraversal().levelOrder(node5));
     }
 
+    public List<List<Integer>> levelOrderNew(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+
+    }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();

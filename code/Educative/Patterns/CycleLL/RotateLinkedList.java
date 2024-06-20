@@ -8,14 +8,57 @@ public class RotateLinkedList {
         ListNode three = new ListNode(3);
         ListNode four = new ListNode(4);
         ListNode five = new ListNode(5);
-        one.next= two;
-        two.next= null;
+        one.next= null;
+        two.next= three;
         three.next= four;
         four.next= five;
         five.next= null;
 
         RotateLinkedList rotateLinkedList = new RotateLinkedList();
-        rotateLinkedList.printLL(rotateLinkedList.rotateRight(one, 3));
+        rotateLinkedList.printLL(rotateLinkedList.rotateRightNew(one, 3));
+
+    }
+
+    public ListNode rotateRightNew(ListNode head, int k) {
+        if(head == null)
+            return head;
+
+        ListNode current = head;
+        ListNode last = head;
+        int size = 0;
+
+        while (head != null){
+            head = head.next;
+            size++;
+        }
+
+        head = current;
+
+        ListNode prev = null;
+        if(k >= size){
+            k = k%size;
+        }
+        int len = size-k;
+        for(int i =0; i<len; i++){
+            prev = head;
+            head = head.next;
+        }
+
+        if(prev != null)
+            prev.next = null;
+
+        ListNode newCurrent = head;
+        while (head != null && head.next!=null){
+            head = head.next;
+        }
+
+        if(head!= null)
+            head.next = current;
+        else
+            newCurrent = current;
+
+        return newCurrent;
+
 
     }
 

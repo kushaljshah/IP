@@ -28,11 +28,29 @@ import java.util.Arrays;
 public class KthMissingPositiveNumber {
 
     public static void main(String[] args) {
-        System.out.println(findKthPositive(new int[]{2,3,4,7,11}, 5));
-        System.out.println(findKthPositive(new int[]{1,2,3,4}, 2));
-        System.out.println(findKthPositive(new int[]{1,2,3,4}, 1));
-        System.out.println(findKthPositive(new int[]{6,7,8,9}, 2));
-        System.out.println(findKthPositive(new int[]{6,7,8,9}, 10));
+        System.out.println(findKthPositiveNew(new int[]{2,3,4,7,11}, 5));
+        System.out.println(findKthPositiveNew(new int[]{1,2,3,4}, 2));
+        System.out.println(findKthPositiveNew(new int[]{1,2,3,4}, 1));
+        System.out.println(findKthPositiveNew(new int[]{6,7,8,9}, 2));
+        System.out.println(findKthPositiveNew(new int[]{6,7,8,9}, 10));
+    }
+
+    public static int findKthPositiveNew(int[] arr, int k) {
+        int j=0;
+        int counter=0;
+        for(int i=1; i<=(arr[arr.length -1] + k); i++){
+            if(j<arr.length && arr[j] == i){
+                j++;
+            }else{
+                counter++;
+            }
+            if(counter == k)
+                return i;
+        }
+
+
+
+        return -1;
     }
 
     public static int findKthPositive(int[] arr, int k) {

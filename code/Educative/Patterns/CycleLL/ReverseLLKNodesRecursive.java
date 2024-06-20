@@ -34,31 +34,102 @@ package Educative.Patterns.CycleLL;
  */
 
 
-class Node
-{
-    int data;
-    Node next;
 
-    Node(int data, Node next)
-    {
-        this.data = data;
-        this.next = next;
-    }
 
-    // Helper function to print linked list starting from the current node
-    public void print()
-    {
-        Node ptr = this;
-        while (ptr != null)
-        {
-            System.out.print(ptr.data + " —> ");
-            ptr = ptr.next;
-        }
-        System.out.println("null");
-    }
-}
+
+
+
+
+
+
 
 class ReverseLLKNodesRecursive {
+
+    public static class Node {
+        int data;
+        Node next;
+
+        Node(int data, Node next)
+        {
+            this.data = data;
+            this.next = next;
+        }
+
+        // Helper function to print linked list starting from the current node
+        public void print()
+        {
+            Node ptr = this;
+            while (ptr != null)
+            {
+                System.out.print(ptr.data + " —> ");
+                ptr = ptr.next;
+            }
+            System.out.println("null");
+        }
+    }
+    public static Node reverseKGroupNew(Node head, int k) {
+
+        if(head == null)
+            return null;
+
+        int size =0;
+        Node initialHead = head;
+        while (head!= null){
+            head = head.next;
+            size++;
+        }
+
+        head = initialHead;
+
+        Node prev = null;
+        Node preHead = null;
+        for(int i=0; i<size/k;i++) {
+            if(prev == null) {
+                prev = reverse(head, k);
+            }else {
+                preHead.next = reverse(head,k);
+            }
+            preHead = head;
+            prev.print();
+            head = head.next;
+        }
+
+        return prev;
+    }
+
+    public static Node reverse(Node head, int k){
+        Node prev = null;
+        int nodeCounter = 0;
+
+        Node originalHead = head;
+        while (head != null){
+            Node next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+            nodeCounter++;
+            if(nodeCounter == k)
+                break;
+
+        }
+
+        originalHead.next = head;
+        return prev;
+    }
+
+    public static void main(String[] args)
+    {
+        // input keys
+        int[] keys = { 1, 2, 3, 4, 5, 6, 7, 8};
+
+        Node head = null;
+        for (int i = keys.length - 1; i >= 0; i--) {
+            head = new Node(keys[i], head);
+        }
+
+        Node res = reverseInGroups(head, 3);
+        res.print();
+    }
 
     // Function to reverse every group of `k` nodes in a given linked list
     public static Node reverseInGroups(Node head, int k)
@@ -100,17 +171,5 @@ class ReverseLLKNodesRecursive {
         return prev;
     }
 
-    public static void main(String[] args)
-    {
-        // input keys
-        int[] keys = { 1, 2, 3, 4, 5};
 
-        Node head = null;
-        for (int i = keys.length - 1; i >= 0; i--) {
-            head = new Node(keys[i], head);
-        }
-
-        head = reverseInGroups(head, 3);
-        head.print();
-    }
 }

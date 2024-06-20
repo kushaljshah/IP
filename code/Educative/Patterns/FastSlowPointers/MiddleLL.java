@@ -21,6 +21,15 @@ package Educative.Patterns.FastSlowPointers;
  * Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
  */
 
+
+/** 1 2 3 4 5 6 7 8 9
+ *
+ * 2 3
+ * 3 5
+ * 4 7
+ * 5 9
+ */
+
 public class MiddleLL {
 
     public static void main(String[] args) {
